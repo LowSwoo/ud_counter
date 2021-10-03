@@ -1,0 +1,97 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/skynet/Documents/work/koyankin/ud_counter/modelsim
+Eup_down_counter
+Z1 w1633224745
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8../src/up_down_counter.vhd
+Z6 F../src/up_down_counter.vhd
+l0
+L5 1
+VIPKVzT=6bQ_^9dLCLB8PU2
+!s100 Lgc<G?24S71S76;eDN]>E3
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1633224959
+!i10b 1
+Z9 !s108 1633224959.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|../src/up_down_counter.vhd|
+Z11 !s107 ../src/up_down_counter.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z14 DEx4 work 15 up_down_counter 0 22 IPKVzT=6bQ_^9dLCLB8PU2
+!i122 0
+l18
+L14 22
+Vl4?H0WP0kH0eX`Se9lVT_0
+!s100 8HINhVnnIKM?3^YP?aQCS2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eup_down_counter_tb
+Z15 w1633224827
+R3
+R4
+!i122 1
+R0
+Z16 8../tb/up_down_counter_tb.vhd
+Z17 F../tb/up_down_counter_tb.vhd
+l0
+L4 1
+V5O?bg_l7NlgWY8]_T60<C0
+!s100 2jk`IS;C5V?W38X<5iWGY2
+R7
+31
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-93|-work|work|../tb/up_down_counter_tb.vhd|
+!s107 ../tb/up_down_counter_tb.vhd|
+!i113 1
+R12
+R13
+Atb
+R2
+R14
+R3
+R4
+DEx4 work 18 up_down_counter_tb 0 22 5O?bg_l7NlgWY8]_T60<C0
+!i122 1
+l14
+L7 27
+VUa6P]DYXf0HI7^iH@AFGm3
+!s100 X0>lCF[X6i=hY150A[NXk1
+R7
+31
+R8
+!i10b 1
+R9
+R18
+Z19 !s107 ../tb/up_down_counter_tb.vhd|
+!i113 1
+R12
+R13
