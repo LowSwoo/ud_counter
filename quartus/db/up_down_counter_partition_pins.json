@@ -20,7 +20,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "cout[4]",
+					"strict" : false
+				},
+				{
+					"name" : "cout[5]",
+					"strict" : false
+				},
+				{
+					"name" : "cout[6]",
+					"strict" : false
+				},
+				{
+					"name" : "cout[7]",
 					"strict" : false
 				},
 				{
@@ -28,7 +40,71 @@
 					"strict" : false
 				},
 				{
-					"name" : "up_down",
+					"name" : "min_value[0]",
+					"strict" : false
+				},
+				{
+					"name" : "min_value[1]",
+					"strict" : false
+				},
+				{
+					"name" : "min_value[2]",
+					"strict" : false
+				},
+				{
+					"name" : "min_value[3]",
+					"strict" : false
+				},
+				{
+					"name" : "min_value[4]",
+					"strict" : false
+				},
+				{
+					"name" : "min_value[5]",
+					"strict" : false
+				},
+				{
+					"name" : "min_value[6]",
+					"strict" : false
+				},
+				{
+					"name" : "min_value[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[1]",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[0]",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[3]",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[2]",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[5]",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[4]",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[7]",
+					"strict" : false
+				},
+				{
+					"name" : "max_value[6]",
 					"strict" : false
 				}
 			]

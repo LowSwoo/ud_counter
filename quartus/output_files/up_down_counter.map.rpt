@@ -1,5 +1,5 @@
 Analysis & Synthesis report for up_down_counter
-Sun Oct  3 04:45:42 2021
+Sun Oct  3 22:15:22 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,9 +14,10 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Inverted Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct  3 04:45:42 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct  3 22:15:22 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; up_down_counter                             ;
 ; Top-level Entity Name              ; up_down_counter                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 5                                           ;
-;     Total combinational functions  ; 5                                           ;
-;     Dedicated logic registers      ; 4                                           ;
-; Total registers                    ; 4                                           ;
-; Total pins                         ; 7                                           ;
+; Total logic elements               ; 43                                          ;
+;     Total combinational functions  ; 43                                          ;
+;     Dedicated logic registers      ; 9                                           ;
+; Total registers                    ; 9                                           ;
+; Total pins                         ; 26                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -174,36 +175,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 5         ;
-;                                             ;           ;
-; Total combinational functions               ; 5         ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 2         ;
-;     -- <=2 input functions                  ; 3         ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2         ;
-;     -- arithmetic mode                      ; 3         ;
-;                                             ;           ;
-; Total registers                             ; 4         ;
-;     -- Dedicated logic registers            ; 4         ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 7         ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 4         ;
-; Total fan-out                               ; 34        ;
-; Average fan-out                             ; 1.48      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 43          ;
+;                                             ;             ;
+; Total combinational functions               ; 43          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 18          ;
+;     -- 3 input functions                    ; 15          ;
+;     -- <=2 input functions                  ; 10          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 36          ;
+;     -- arithmetic mode                      ; 7           ;
+;                                             ;             ;
+; Total registers                             ; 9           ;
+;     -- Dedicated logic registers            ; 9           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 26          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 25          ;
+; Total fan-out                               ; 198         ;
+; Average fan-out                             ; 1.90        ;
++---------------------------------------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,7 +212,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name     ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
-; |up_down_counter           ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 7    ; 0            ; 0          ; |up_down_counter    ; up_down_counter ; work         ;
+; |up_down_counter           ; 43 (43)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 26   ; 0            ; 0          ; |up_down_counter    ; up_down_counter ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -221,14 +222,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
+; Total registers                              ; 9     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 9     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; direction                              ; 8       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -236,19 +247,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 7                           ;
-; cycloneiii_ff         ; 4                           ;
-;     CLR               ; 4                           ;
-; cycloneiii_lcell_comb ; 5                           ;
-;     arith             ; 3                           ;
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 9                           ;
+;     CLR               ; 9                           ;
+; cycloneiii_lcell_comb ; 43                          ;
+;     arith             ; 7                           ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 2                           ;
-;     normal            ; 2                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
+;         3 data inputs ; 6                           ;
+;     normal            ; 36                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.30                        ;
-; Average LUT depth     ; 1.02                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 3.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -257,7 +269,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -267,25 +279,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Oct  3 04:45:27 2021
+    Info: Processing started: Sun Oct  3 22:15:03 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off up_down_counter -c up_down_counter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd
-    Info (12022): Found design unit 1: up_down_counter-rtl File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 14
+    Info (12022): Found design unit 1: up_down_counter-rtl File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 15
     Info (12023): Found entity 1: up_down_counter File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 5
 Info (12127): Elaborating entity "up_down_counter" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at up_down_counter.vhd(25): signal "min_value" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 25
+Info (13000): Registers with preset signals will power-up high File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 18
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "count[0]" is converted into an equivalent circuit using register "count[0]~_emulated" and latch "count[0]~1" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
+    Warning (13310): Register "count[1]" is converted into an equivalent circuit using register "count[1]~_emulated" and latch "count[1]~5" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
+    Warning (13310): Register "count[2]" is converted into an equivalent circuit using register "count[2]~_emulated" and latch "count[2]~9" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
+    Warning (13310): Register "count[3]" is converted into an equivalent circuit using register "count[3]~_emulated" and latch "count[3]~13" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
+    Warning (13310): Register "count[4]" is converted into an equivalent circuit using register "count[4]~_emulated" and latch "count[4]~17" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
+    Warning (13310): Register "count[5]" is converted into an equivalent circuit using register "count[5]~_emulated" and latch "count[5]~21" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
+    Warning (13310): Register "count[6]" is converted into an equivalent circuit using register "count[6]~_emulated" and latch "count[6]~25" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
+    Warning (13310): Register "count[7]" is converted into an equivalent circuit using register "count[7]~_emulated" and latch "count[7]~29" File: /home/skynet/Documents/work/koyankin/ud_counter/src/up_down_counter.vhd Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 416 megabytes
-    Info: Processing ended: Sun Oct  3 04:45:42 2021
-    Info: Elapsed time: 00:00:15
+Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 43 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 418 megabytes
+    Info: Processing ended: Sun Oct  3 22:15:22 2021
+    Info: Elapsed time: 00:00:19
     Info: Total CPU time (on all processors): 00:00:24
 
 
